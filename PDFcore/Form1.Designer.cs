@@ -52,7 +52,7 @@ namespace PDFcore
             this.btnOpen.AutoSize = true;
             this.btnOpen.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpen.ForeColor = System.Drawing.Color.Black;
-            this.btnOpen.Location = new System.Drawing.Point(263, 134);
+            this.btnOpen.Location = new System.Drawing.Point(258, 152);
             this.btnOpen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(100, 36);
