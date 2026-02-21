@@ -36,10 +36,11 @@ namespace PDFcore
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.watermarkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.organizePagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -73,7 +74,8 @@ namespace PDFcore
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem,
             this.saveAsToolStripMenuItem,
-            this.saveToolStripMenuItem});
+            this.saveToolStripMenuItem,
+            this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -81,20 +83,27 @@ namespace PDFcore
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.saveAsToolStripMenuItem.Text = "Save As";
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -106,29 +115,37 @@ namespace PDFcore
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
+            // addTextToolStripMenuItem
+            // 
+            this.addTextToolStripMenuItem.Name = "addTextToolStripMenuItem";
+            this.addTextToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.addTextToolStripMenuItem.Text = "Add Text";
+            // 
+            // watermarkToolStripMenuItem
+            // 
+            this.watermarkToolStripMenuItem.Name = "watermarkToolStripMenuItem";
+            this.watermarkToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.watermarkToolStripMenuItem.Text = "Watermark";
+            // 
+            // organizePagesToolStripMenuItem
+            // 
+            this.organizePagesToolStripMenuItem.Name = "organizePagesToolStripMenuItem";
+            this.organizePagesToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.organizePagesToolStripMenuItem.Text = "Organize Pages";
+            // 
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
-            // addTextToolStripMenuItem
+            // exitToolStripMenuItem
             // 
-            this.addTextToolStripMenuItem.Name = "addTextToolStripMenuItem";
-            this.addTextToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.addTextToolStripMenuItem.Text = "Add Text";
-            // 
-            // watermarkToolStripMenuItem
-            // 
-            this.watermarkToolStripMenuItem.Name = "watermarkToolStripMenuItem";
-            this.watermarkToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.watermarkToolStripMenuItem.Text = "Watermark";
-            // 
-            // organizePagesToolStripMenuItem
-            // 
-            this.organizePagesToolStripMenuItem.Name = "organizePagesToolStripMenuItem";
-            this.organizePagesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.organizePagesToolStripMenuItem.Text = "Organize Pages";
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // ViewerForm
             // 
@@ -162,5 +179,6 @@ namespace PDFcore
         private System.Windows.Forms.ToolStripMenuItem watermarkToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem organizePagesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }
