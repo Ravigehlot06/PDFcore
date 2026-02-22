@@ -117,4 +117,72 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAHCAAAAEAIACoDgAAFgAAACgAAAAcAAAAQAAAAAEAIAAAAAAAAA4AAAAAAAAAAAAAAAAAAAAA
+        AAAREGZ7EhNp6hITavgSFGv4ExRs+BMUbPgUFW33FBZt+BUWbvgVFm74FRdu+BUXb/gWF2/5Fhdw+BYX
+        cPgWF3D4Fhdw+BYXcfgWF3H4Fxdx+RcYcvkXGHL5Fxhy+BcYcvgXGHL4Fxhy+BcYcuwVFm+NEhJq6BMV
+        bv8UFW7/FBVv/xUWb/8VFm//FRZw/xUXcP8XGHH/Fxhx/xcYcf8XGHL/GBhy/xgYcv8XGHL/GBhy/xgY
+        cv8YGHL/GBlz/xgZc/8YGXP/GRl0/xkZdP8ZGnT/GRp1/xobdv8aGnf/Fxh09BMUa/kVFnD/FRZw/xYX
+        cf8WF3H/Fxhy/xcYcv8XGHL/GBlz/xgZc/8YGXP/GRp0/xkadP8ZGnX/Ght1/xkadP8aG3X/Ght2/xob
+        dv8aG3b/Gxx2/xscd/8bHHf/Gxx3/xsceP8bHHj/HBx5/xoad/4VFm/6Fxhy/xgZc/8ZGnT/GRp1/xob
+        dv8aG3b/Ght2/xscdv8bHHf/Gxx3/xwdeP8cHXn/HB15/xwdef8dHXn/HR15/x0dev8dHXr/HR56/x0e
+        ev8dHXr/HR56/x0ee/8dHXv/HR17/x0dfP8cHXv+Fxhy+Roadv8bHHf/HB14/xwdef8cHXn/HR16/x0e
+        e/8dHnv/HR57/x0efP8dHnz/Hh58/x4efP8eHnz/Hh99/x4efP8eHn3/HR99/x4ffv8eH37/Hh9+/x4f
+        fv8dH3//Hh9//x4ff/8fH3//HR59/hkadvkcHHn/HR16/x0de/8dHnz/Hh58/x4eff8dH37/Hh9//x4f
+        f/8eIH//HiB//x4ff/8fH3//IB9+/x8gf/8fIID/HyCA/x8ggf8fIIH/HyCB/x8ggv8fIIL/Hx+D/x8f
+        g/8fH4P/Hx+D/x4egf4bG3n5HR19/x0dfv8eHn//Hh+A/x4egP8eHoH/Hx+C/x8fg/8fH4P/HyCC/x8g
+        gv8fIIP/ICGD/yEig/8hIYP/ICGE/yAghP8gIIT/Hx+D/yAfhP8gIIX/ICCF/yAghv8gH4X/IB+G/yAg
+        hv8fHoT+Gxx9+R4egf8eHoL/Hx+D/x8fg/8fH4P/Hx+E/yAghf8gIIT/ICCE/yEhhf8lJof/Li6M/zo6
+        kv9ERZf/RkeY/z0+lP8vMI3/JyeJ/yIiiP8hIIf/ISCI/yEhif8hIon/ISGJ/yEhif8hIon/ICCH/h0d
+        gPkfHoT/ICCF/yAghf8gH4X/IB+G/yAhiP8gIYj/ICGH/yUkif8yMo//WVmk/5eWxf/Cwt3/1dXn/9jY
+        6f/IyOD/n5/I/2lpq/85OpX/JyeN/yIiiv8hIov/IiOM/yIjjP8iI4v/IiOM/yEhiv4eHoP5IB+H/yAg
+        h/8gIIj/ISGJ/yEhif8hIor/ISOK/ycnjP9APpj/kZDB/+Li7f////7/////////////////////////
+        ///t7fT/oqPL/0VFnf8lJY7/IiOO/yMkj/8kJI//JCSP/yQkj/8jI439Hx+G+SAhif8hIYr/ISKL/yIi
+        i/8iIoz/IiKM/yYmjv9BQJv/pKTL//j4+f///////f39/+Lh7//GxuD/wMHe/9TV6P/z8/j///////X1
+        +f9vbrX/JyeT/yMlkv8kJZL/JSaS/yUmkv8lJpP/JCSQ/iAgiPkiIoz/IiON/yMjjv8jJI//IiSQ/yQl
+        kP8yMpf/i4vB//j4+v//////7Ov1/5+fzv9tbrf/YGGy/1xer/9bXK//eHm8/8bH4v+hoND/PTyf/ygo
+        lf8lJpX/JieV/yYmlf8mJ5X/JSaV/yUlk/0hIov5IyOP/yMkkP8jJJH/IyWS/yMkkv8pKZT/Vlap/97e
+        6///////8/L4/4eGxP9DQ6X/gYLA/7q62/+wsNf/Vleu/zQ1n/9BQqX/Ojqh/yssmv8nKJj/KCmZ/ygp
+        mf8oKZn/KCmZ/ygpmf8mJ5b+IiOO+SQlkv8jJZL/JCWT/yQmlP8kJZT/MDCa/42MxP/9/P3//////7Ky
+        2v9FRaf/Ojmh/4yMxv/S0+f/zc7l/2hpt/8wMZ7/KSmb/ykqm/8pKpv/Kiqb/yoqnP8qKpz/Kiqc/yoq
+        nP8qK5v/KCmZ/iMkkfkkJZP/JCWU/yUmlv8mJ5f/JieX/zo5oP+zs9j///////b2+v93dsD/NDOg/09O
+        rP/V1ej/0dDm/+Tk8P+ystr/PT2m/ysqnv8rKZ//Kyqf/ysqn/8rLJ//Kyuf/ysrn/8rKp7/LCue/ysr
+        nP4kJZT5JSaW/yYnlv8mJ5f/JyiY/ygpmf9AQKT/xMTh///////q6vX/YmK4/zEwoP9TUq//3d3t/8XE
+        4v/b2+z/vbzh/z8/qv8tLKL/LSui/y0ro/8tK6L/LS2j/y0to/8uLKP/MC+k/zQ0pv80NaX+JSeW+CYn
+        mf8nKJn/KCmZ/ycpmf8oKZr/QECl/8PD4f//////7Oz2/2Vmuf8wMaD/PDum/6Gg0f/l5fH/5OXw/3l4
+        xP81NKf/Li6l/y8upf8vLqX/Ly6l/zEwpv81NKn/OTmr/zs7rP86O6z/Nzio/iYml/gnJ5n/KCiZ/ygp
+        mv8oKZr/KCma/zo5pP+rq9f///////n5/P+Dg8X/NTWk/zAwo/9jYrj/y8zk/7W23f9LS7L/MS+n/zAv
+        p/8zMqr/Nzau/zw6sf8+PLP/Pz2z/z8+sv89Pa//PD2u/zo5q/4xMKT4MTCl/y8uov8tLKD/Kyue/yoq
+        nf8xMaH/fHvC//j4+///////wsLh/01Mr/8zMqb/Q0Kt/52e0v+BgMv/Pjyz/zw5tP9BPrj/REG7/0RB
+        u/9DQbr/Q0G4/0JAt/9BP7b/QD+1/z8+tP88PK/+NjWq+Dk3rv86OK//PDqx/zw6sf88OrD/PDux/1ta
+        vf/T0+v///////n5/P+pqNj/XVu8/0tJuv9YVcL/VVHC/0xJv/9VU8L/cnLK/2RjxP9LSMD/RkO+/0VD
+        vf9FQ7v/REK6/0NBuf9CQLj/Pz20/jk4rfg7ObD/PTuy/z48tP9APrX/QT+3/0NBuf9MSr7/hoXQ/+zt
+        9///////+vr9/8zL6P+SkdT/eXjM/3Z1y/+Eg9D/ra3f/+jo9f/CwuX/ZGLG/0tHwv9IRcD/R0W//0ZE
+        vf9FQ7v/REK6/0E/t/47OrH4PTuz/z89tf9BP7b/QkC4/0NBuf9EQbz/RkO+/1VTxP+Xl9j/6+v2////
+        ////////+Pj8/+zs9//p6fb/8vL6////////////9vb7/4uI1P9NSsT/SUXC/0lGwv9JRsD/R0W//0ZE
+        vf9DQbn+Pjyz90A+tv9BP7f/QkC5/0NBu/9EQr3/RUK+/0ZCv/9JRsH/WFXG/4aF1P/My+v/9PT6////
+        ///////////////////7+/3/4eHz/6Gf3f9jYcz/TkrG/0pGw/9KRsL/SUbB/0hFwP9IRb//RUO7/kA+
+        tvdBP7f/Q0G5/0NBvP9EQr3/RUO//0ZEv/9HRMH/SETB/0pHw/9TUMf/aGbN/4uK1/+urOL/w8Lp/8bG
+        6v+3tuX/mpjc/3Z00f9bWcv/TkvG/0VDuP8+Pa3/PDup/zw7qv88O63/Ozqs/zk5q/9BP7j3Q0C6/0RC
+        u/9EQr3/RUO+/0dEwP9IRcH/SUbC/0lGw/9KRsP/S0fE/05Lx/9TUMn/WlfM/19dzf9hX83/XVrN/1dU
+        y/9TT8r/UU3K/0ZDuP84Np//ODah/zQymf8wL4v/MS+O/zEwk/8sK4/zQ0C69kRBvP9EQr3/RUO+/0ZE
+        wP9IRcH/SUbD/0lHw/9LR8T/S0jF/0xIxf9NScb/TkrI/09Myf9QTMn/UEzK/1BNyv9RTcr/UEzK/1BM
+        yf8+O6z/NjGl/z43u/8/OL//OTOn/zIujP8tKoLoKSaBZURCvPZEQr3/REK+/0ZEv/9HRcH/SUbC/0pH
+        w/9LSMT/TEnF/01Jxv9NSsf/TkvI/09Nyf9QTsr/UE3K/1FOy/9RT8z/Uk/M/1JOy/9RTcr/Ozei/zMv
+        l/86NLH/QTjF/0A4wP84M6noLSqLVxAKQgFEQrz3RUO+/0ZEv/9HRcD/SEbB/0pHw/9LSMT/TEnG/01K
+        x/9OS8j/T03J/1BNyv9QTsr/UU7M/1JQzP9SUMz/UlDN/1JQzP9SUMz/U0/L/zw5ov8xLon/NzOo/0E5
+        w/9EO8zlPzjDU0w7/wEjH3QARUK990ZDv/9HRcD/SEbB/0lGwv9KR8P/TEnF/01Kxv9OSsf/TkvI/1BN
+        yf9QTsr/UU7L/1JOzP9SUMz/U1DN/1NRzf9TUMz/U1HN/1NQy/88OqP/MS+J/zcypf9AOcLhQzvOTnVd
+        /wAxLKUAAAAAAEdEvvhIRMH/SEXB/0lGwv9KR8P/S0jE/0xJxf9NSsb/T0vI/1BMyf9RTcr/UU7L/1JP
+        y/9ST8z/U1DN/1RRzf9UUc7/VFHO/1RRzv9UUM3/PDqi/zIwi/83MqnePDa+R1JHxwA/OMsAAAAAAAAA
+        AABIRr/tSUbB/0lFwv9KRsP/S0fD/0xIxf9NScb/TkrH/09LyP9QTMn/UU3K/1JOzP9TT8z/VFDN/1RQ
+        zv9VUc7/VVHP/1VRz/9VUc//VVHO/z47pv8xLY7XNTCoQU9IwQBBOdAAAAAAAAAAAAAAAAAARkK7hkhE
+        v+1JRcL3SkbC90pHwvdLSMT3TUnF901KxfdOSsf3T0vI91BMyfdSTcv3U07M91RQzfdVUM73VFDN91VR
+        zvhVUc/4VVHP+VRQzvpCPbDfLSeLQkU+uwA2MMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAABwAAAA8AAAAfAAAAPw
+</value>
+  </data>
 </root>

@@ -29,18 +29,19 @@ namespace PDFcore
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewerForm));
             this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.watermarkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.organizePagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -105,6 +106,14 @@ namespace PDFcore
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -118,19 +127,19 @@ namespace PDFcore
             // addTextToolStripMenuItem
             // 
             this.addTextToolStripMenuItem.Name = "addTextToolStripMenuItem";
-            this.addTextToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.addTextToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addTextToolStripMenuItem.Text = "Add Text";
             // 
             // watermarkToolStripMenuItem
             // 
             this.watermarkToolStripMenuItem.Name = "watermarkToolStripMenuItem";
-            this.watermarkToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.watermarkToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.watermarkToolStripMenuItem.Text = "Watermark";
             // 
             // organizePagesToolStripMenuItem
             // 
             this.organizePagesToolStripMenuItem.Name = "organizePagesToolStripMenuItem";
-            this.organizePagesToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.organizePagesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.organizePagesToolStripMenuItem.Text = "Organize Pages";
             // 
             // toolsToolStripMenuItem
@@ -139,14 +148,6 @@ namespace PDFcore
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
             // ViewerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,6 +155,8 @@ namespace PDFcore
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.webView21);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ViewerForm";
             this.Text = "PDFcore";
