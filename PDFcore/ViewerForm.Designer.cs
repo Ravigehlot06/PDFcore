@@ -42,6 +42,7 @@ namespace PDFcore
             this.watermarkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.organizePagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.splitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -127,26 +128,35 @@ namespace PDFcore
             // addTextToolStripMenuItem
             // 
             this.addTextToolStripMenuItem.Name = "addTextToolStripMenuItem";
-            this.addTextToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addTextToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.addTextToolStripMenuItem.Text = "Add Text";
             // 
             // watermarkToolStripMenuItem
             // 
             this.watermarkToolStripMenuItem.Name = "watermarkToolStripMenuItem";
-            this.watermarkToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.watermarkToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.watermarkToolStripMenuItem.Text = "Watermark";
             // 
             // organizePagesToolStripMenuItem
             // 
             this.organizePagesToolStripMenuItem.Name = "organizePagesToolStripMenuItem";
-            this.organizePagesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.organizePagesToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.organizePagesToolStripMenuItem.Text = "Organize Pages";
             // 
             // toolsToolStripMenuItem
             // 
+            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.splitToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
+            // 
+            // splitToolStripMenuItem
+            // 
+            this.splitToolStripMenuItem.Name = "splitToolStripMenuItem";
+            this.splitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.splitToolStripMenuItem.Text = "Split";
+            this.splitToolStripMenuItem.Click += new System.EventHandler(this.splitToolStripMenuItem_Click);
             // 
             // ViewerForm
             // 
@@ -183,5 +193,6 @@ namespace PDFcore
         private System.Windows.Forms.ToolStripMenuItem organizePagesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem splitToolStripMenuItem;
     }
 }
