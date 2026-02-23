@@ -11,6 +11,8 @@ using Microsoft.Web.WebView2.Core;
 using iText.Kernel.Pdf;
 using iText.Kernel.Utils;
 using System.IO;
+using PdfiumViewer;
+using System.Drawing.Imaging;
 
 namespace PDFcore
 {
@@ -144,8 +146,8 @@ namespace PDFcore
 
                 using (PdfReader reader = new PdfReader(_currentFilePath))
                 using (PdfWriter writer = new PdfWriter(tempFile))
-                using (PdfDocument srcDoc = new PdfDocument(reader))
-                using (PdfDocument destDoc = new PdfDocument(writer))
+                using (iText.Kernel.Pdf.PdfDocument srcDoc = new iText.Kernel.Pdf.PdfDocument(reader))
+                using (iText.Kernel.Pdf.PdfDocument destDoc = new iText.Kernel.Pdf.PdfDocument(writer))
                 {
                     srcDoc.CopyPagesTo(startPage, endPage, destDoc);
                 }
@@ -157,6 +159,44 @@ namespace PDFcore
             catch
             {
                 MessageBox.Show("Invalid page range.");
+            }
+        }
+
+        private void pDFToImageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(_currentFilePath))
+            {
+                MessageBox.Show("No PDF is open.");
+                return;
+            }
+
+            FolderBrowserDialog folderDialog = new FolderBrowserDialog();
+
+            if (folderDialog.ShowDialog() != DialogResult.OK)
+                return;
+
+            try
+            {
+                using (var document = PdfiumViewer.PdfDocument.Load(_currentFilePath))
+                {
+                    for (int i = 0; i < document.PageCount; i++)
+                    {
+                        using (var image = document.Render(i, 300, 300, true))
+                        {
+                            string outputPath = Path.Combine(
+                                folderDialog.SelectedPath,
+                                $"Page_{i + 1}.png");
+
+                            image.Save(outputPath, ImageFormat.Png);
+                        }
+                    }
+                }
+
+                MessageBox.Show("PDF converted to images successfully!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
     }
