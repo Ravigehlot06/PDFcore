@@ -199,5 +199,65 @@ namespace PDFcore
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        private void mergePDFsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(_currentFilePath))
+            {
+                MessageBox.Show("No PDF is currently open.");
+                return;
+            }
+
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "PDF Files|*.pdf";
+            ofd.Title = "Select PDF to Merge";
+
+            if (ofd.ShowDialog() != DialogResult.OK)
+                return;
+
+            string secondPdfPath = ofd.FileName;
+
+            try
+            {
+                // Create temp merged file
+                string mergedFilePath = Path.Combine(
+                    Path.GetTempPath(),
+                    Guid.NewGuid().ToString() + "_merged.pdf");
+
+                using (iText.Kernel.Pdf.PdfWriter writer =
+                       new iText.Kernel.Pdf.PdfWriter(mergedFilePath))
+                using (iText.Kernel.Pdf.PdfDocument destDoc =
+                       new iText.Kernel.Pdf.PdfDocument(writer))
+                {
+                    // First PDF (currently open)
+                    using (iText.Kernel.Pdf.PdfReader reader1 =
+                           new iText.Kernel.Pdf.PdfReader(_currentFilePath))
+                    using (iText.Kernel.Pdf.PdfDocument srcDoc1 =
+                           new iText.Kernel.Pdf.PdfDocument(reader1))
+                    {
+                        srcDoc1.CopyPagesTo(1, srcDoc1.GetNumberOfPages(), destDoc);
+                    }
+
+                    // Second selected PDF
+                    using (iText.Kernel.Pdf.PdfReader reader2 =
+                           new iText.Kernel.Pdf.PdfReader(secondPdfPath))
+                    using (iText.Kernel.Pdf.PdfDocument srcDoc2 =
+                           new iText.Kernel.Pdf.PdfDocument(reader2))
+                    {
+                        srcDoc2.CopyPagesTo(1, srcDoc2.GetNumberOfPages(), destDoc);
+                    }
+                }
+
+                MessageBox.Show("PDFs merged successfully!");
+
+                // Open merged file in new window
+                ViewerForm newViewer = new ViewerForm(mergedFilePath);
+                newViewer.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
     }
 }

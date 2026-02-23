@@ -44,6 +44,7 @@ namespace PDFcore
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pDFToImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mergePDFsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -148,7 +149,8 @@ namespace PDFcore
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.splitToolStripMenuItem,
-            this.pDFToImageToolStripMenuItem});
+            this.pDFToImageToolStripMenuItem,
+            this.mergePDFsToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
@@ -166,6 +168,13 @@ namespace PDFcore
             this.pDFToImageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pDFToImageToolStripMenuItem.Text = "PDF to Image";
             this.pDFToImageToolStripMenuItem.Click += new System.EventHandler(this.pDFToImageToolStripMenuItem_Click);
+            // 
+            // mergePDFsToolStripMenuItem
+            // 
+            this.mergePDFsToolStripMenuItem.Name = "mergePDFsToolStripMenuItem";
+            this.mergePDFsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mergePDFsToolStripMenuItem.Text = "Merge PDFs";
+            this.mergePDFsToolStripMenuItem.Click += new System.EventHandler(this.mergePDFsToolStripMenuItem_Click);
             // 
             // ViewerForm
             // 
@@ -204,5 +213,6 @@ namespace PDFcore
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem splitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pDFToImageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mergePDFsToolStripMenuItem;
     }
 }
