@@ -259,5 +259,52 @@ namespace PDFcore
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        private void imageToPDFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+            ofd.Multiselect = true;
+            ofd.Title = "Select Image(s)";
+
+            if (ofd.ShowDialog() != DialogResult.OK)
+                return;
+
+            try
+            {
+                string outputPath = Path.Combine(
+                    Path.GetTempPath(),
+                    Guid.NewGuid().ToString() + "_images.pdf");
+
+                using (iText.Kernel.Pdf.PdfWriter writer =
+                       new iText.Kernel.Pdf.PdfWriter(outputPath))
+                using (iText.Kernel.Pdf.PdfDocument pdf =
+                       new iText.Kernel.Pdf.PdfDocument(writer))
+                using (iText.Layout.Document document =
+                       new iText.Layout.Document(pdf))
+                {
+                    foreach (string imagePath in ofd.FileNames)
+                    {
+                        iText.Layout.Element.Image img =
+                            new iText.Layout.Element.Image(
+                                iText.IO.Image.ImageDataFactory.Create(imagePath));
+
+                        img.SetAutoScale(true);
+
+                        document.Add(img);
+                        document.Add(new iText.Layout.Element.AreaBreak());
+                    }
+                }
+
+                MessageBox.Show("Images converted to PDF successfully!");
+
+                ViewerForm newViewer = new ViewerForm(outputPath);
+                newViewer.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
     }
 }

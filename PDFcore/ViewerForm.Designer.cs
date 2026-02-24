@@ -45,6 +45,7 @@ namespace PDFcore
             this.splitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pDFToImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mergePDFsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageToPDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -150,7 +151,8 @@ namespace PDFcore
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.splitToolStripMenuItem,
             this.pDFToImageToolStripMenuItem,
-            this.mergePDFsToolStripMenuItem});
+            this.mergePDFsToolStripMenuItem,
+            this.imageToPDFToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
@@ -166,7 +168,7 @@ namespace PDFcore
             // 
             this.pDFToImageToolStripMenuItem.Name = "pDFToImageToolStripMenuItem";
             this.pDFToImageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.pDFToImageToolStripMenuItem.Text = "PDF to Image";
+            this.pDFToImageToolStripMenuItem.Text = "PDF To Image";
             this.pDFToImageToolStripMenuItem.Click += new System.EventHandler(this.pDFToImageToolStripMenuItem_Click);
             // 
             // mergePDFsToolStripMenuItem
@@ -175,6 +177,13 @@ namespace PDFcore
             this.mergePDFsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mergePDFsToolStripMenuItem.Text = "Merge PDFs";
             this.mergePDFsToolStripMenuItem.Click += new System.EventHandler(this.mergePDFsToolStripMenuItem_Click);
+            // 
+            // imageToPDFToolStripMenuItem
+            // 
+            this.imageToPDFToolStripMenuItem.Name = "imageToPDFToolStripMenuItem";
+            this.imageToPDFToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.imageToPDFToolStripMenuItem.Text = "Image To PDF";
+            this.imageToPDFToolStripMenuItem.Click += new System.EventHandler(this.imageToPDFToolStripMenuItem_Click);
             // 
             // ViewerForm
             // 
@@ -214,5 +223,6 @@ namespace PDFcore
         private System.Windows.Forms.ToolStripMenuItem splitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pDFToImageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mergePDFsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem imageToPDFToolStripMenuItem;
     }
 }
