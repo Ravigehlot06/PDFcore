@@ -30,7 +30,6 @@ namespace PDFcore
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewerForm));
-            this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,28 +38,18 @@ namespace PDFcore
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.watermarkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.organizePagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pDFToImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mergePDFsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageToPDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
+            this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
+            this.deletePageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.movePageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.SuspendLayout();
-            // 
-            // webView21
-            // 
-            this.webView21.AllowExternalDrop = true;
-            this.webView21.CreationProperties = null;
-            this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.webView21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webView21.Location = new System.Drawing.Point(0, 24);
-            this.webView21.Name = "webView21";
-            this.webView21.Size = new System.Drawing.Size(800, 426);
-            this.webView21.TabIndex = 0;
-            this.webView21.ZoomFactor = 1D;
             // 
             // menuStrip1
             // 
@@ -70,7 +59,7 @@ namespace PDFcore
             this.toolsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(878, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -122,7 +111,6 @@ namespace PDFcore
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addTextToolStripMenuItem,
-            this.watermarkToolStripMenuItem,
             this.organizePagesToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
@@ -131,19 +119,17 @@ namespace PDFcore
             // addTextToolStripMenuItem
             // 
             this.addTextToolStripMenuItem.Name = "addTextToolStripMenuItem";
-            this.addTextToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.addTextToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addTextToolStripMenuItem.Text = "Add Text";
-            // 
-            // watermarkToolStripMenuItem
-            // 
-            this.watermarkToolStripMenuItem.Name = "watermarkToolStripMenuItem";
-            this.watermarkToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
-            this.watermarkToolStripMenuItem.Text = "Watermark";
+            this.addTextToolStripMenuItem.Click += new System.EventHandler(this.addTextToolStripMenuItem_Click);
             // 
             // organizePagesToolStripMenuItem
             // 
+            this.organizePagesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deletePageToolStripMenuItem,
+            this.movePageToolStripMenuItem});
             this.organizePagesToolStripMenuItem.Name = "organizePagesToolStripMenuItem";
-            this.organizePagesToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.organizePagesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.organizePagesToolStripMenuItem.Text = "Organize Pages";
             // 
             // toolsToolStripMenuItem
@@ -160,36 +146,63 @@ namespace PDFcore
             // splitToolStripMenuItem
             // 
             this.splitToolStripMenuItem.Name = "splitToolStripMenuItem";
-            this.splitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.splitToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.splitToolStripMenuItem.Text = "Split";
             this.splitToolStripMenuItem.Click += new System.EventHandler(this.splitToolStripMenuItem_Click);
             // 
             // pDFToImageToolStripMenuItem
             // 
             this.pDFToImageToolStripMenuItem.Name = "pDFToImageToolStripMenuItem";
-            this.pDFToImageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pDFToImageToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.pDFToImageToolStripMenuItem.Text = "PDF To Image";
             this.pDFToImageToolStripMenuItem.Click += new System.EventHandler(this.pDFToImageToolStripMenuItem_Click);
             // 
             // mergePDFsToolStripMenuItem
             // 
             this.mergePDFsToolStripMenuItem.Name = "mergePDFsToolStripMenuItem";
-            this.mergePDFsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mergePDFsToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.mergePDFsToolStripMenuItem.Text = "Merge PDFs";
             this.mergePDFsToolStripMenuItem.Click += new System.EventHandler(this.mergePDFsToolStripMenuItem_Click);
             // 
             // imageToPDFToolStripMenuItem
             // 
             this.imageToPDFToolStripMenuItem.Name = "imageToPDFToolStripMenuItem";
-            this.imageToPDFToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.imageToPDFToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.imageToPDFToolStripMenuItem.Text = "Image To PDF";
             this.imageToPDFToolStripMenuItem.Click += new System.EventHandler(this.imageToPDFToolStripMenuItem_Click);
+            // 
+            // webView21
+            // 
+            this.webView21.AllowExternalDrop = true;
+            this.webView21.CreationProperties = null;
+            this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.webView21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webView21.Location = new System.Drawing.Point(0, 24);
+            this.webView21.Name = "webView21";
+            this.webView21.Size = new System.Drawing.Size(878, 497);
+            this.webView21.TabIndex = 2;
+            this.webView21.ZoomFactor = 1D;
+            this.webView21.MouseClick += new System.Windows.Forms.MouseEventHandler(this.webView21_MouseClick);
+            // 
+            // deletePageToolStripMenuItem
+            // 
+            this.deletePageToolStripMenuItem.Name = "deletePageToolStripMenuItem";
+            this.deletePageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deletePageToolStripMenuItem.Text = "Delete Page";
+            this.deletePageToolStripMenuItem.Click += new System.EventHandler(this.deletePageToolStripMenuItem_Click);
+            // 
+            // movePageToolStripMenuItem
+            // 
+            this.movePageToolStripMenuItem.Name = "movePageToolStripMenuItem";
+            this.movePageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.movePageToolStripMenuItem.Text = "Move Page";
+            this.movePageToolStripMenuItem.Click += new System.EventHandler(this.movePageToolStripMenuItem_Click);
             // 
             // ViewerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(878, 521);
             this.Controls.Add(this.webView21);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -198,17 +211,15 @@ namespace PDFcore
             this.Name = "ViewerForm";
             this.Text = "PDFcore";
             this.Load += new System.EventHandler(this.ViewerForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
@@ -216,7 +227,6 @@ namespace PDFcore
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addTextToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem watermarkToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem organizePagesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
@@ -224,5 +234,8 @@ namespace PDFcore
         private System.Windows.Forms.ToolStripMenuItem pDFToImageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mergePDFsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem imageToPDFToolStripMenuItem;
+        private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
+        private System.Windows.Forms.ToolStripMenuItem deletePageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem movePageToolStripMenuItem;
     }
 }

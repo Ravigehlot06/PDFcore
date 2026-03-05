@@ -13,12 +13,19 @@ using iText.Kernel.Utils;
 using System.IO;
 using PdfiumViewer;
 using System.Drawing.Imaging;
+using iText.Kernel.Font;
+using iText.IO.Font.Constants;
+using iText.Kernel.Pdf.Canvas;
+
 
 namespace PDFcore
 {
     public partial class ViewerForm : Form
     {
         private string _currentFilePath;
+
+        float clickX;
+        float clickY;
 
         public ViewerForm(string filePath)
         {
@@ -31,6 +38,7 @@ namespace PDFcore
         private async void ViewerForm_Load(object sender, EventArgs e)
         {
             await webView21.EnsureCoreWebView2Async();
+
             webView21.Source = new Uri(_currentFilePath);
         }
 
@@ -305,6 +313,132 @@ namespace PDFcore
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void addTextToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(_currentFilePath))
+            {
+                MessageBox.Show("No PDF open.");
+                return;
+            }
+
+            string text = Microsoft.VisualBasic.Interaction.InputBox(
+                "Enter text to add:",
+                "Add Text",
+                "");
+
+            if (string.IsNullOrWhiteSpace(text))
+                return;
+
+            string pageInput = Microsoft.VisualBasic.Interaction.InputBox(
+                "Enter page number:",
+                "Page Number",
+                "1");
+
+            int pageNumber = int.Parse(pageInput);
+
+            string tempFile = Path.Combine(Path.GetTempPath(), "addtext.pdf");
+
+            PdfReader reader = new PdfReader(_currentFilePath);
+            PdfWriter writer = new PdfWriter(tempFile);
+            iText.Kernel.Pdf.PdfDocument pdfDoc = new iText.Kernel.Pdf.PdfDocument(reader, writer);
+
+            PdfPage page = pdfDoc.GetPage(pageNumber);
+
+            PdfCanvas canvas = new PdfCanvas(page);
+
+            canvas.BeginText();
+            canvas.SetFontAndSize(
+                PdfFontFactory.CreateFont(StandardFonts.HELVETICA),
+                20
+            );
+
+            float pdfY = page.GetPageSize().GetHeight() - clickY;
+
+            canvas.MoveText(clickX, pdfY);
+            canvas.ShowText(text);
+            canvas.EndText();
+
+            pdfDoc.Close();
+            reader.Close();
+            writer.Close();
+
+            _currentFilePath = tempFile;
+            webView21.Source = new Uri(_currentFilePath);
+        }
+
+        private void webView21_MouseClick(object sender, MouseEventArgs e)
+        {
+            clickX = e.X;
+            clickY = e.Y;
+
+            MessageBox.Show("Text will be placed here");
+        }
+
+        private void deletePageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string input = Microsoft.VisualBasic.Interaction.InputBox(
+                "Enter page number to delete",
+                "Delete Page");
+
+            int pageNumber = int.Parse(input);
+
+            string output = Path.Combine(Path.GetTempPath(), "output.pdf");
+
+            PdfReader reader = new PdfReader(_currentFilePath);
+            PdfWriter writer = new PdfWriter(output);
+
+            iText.Kernel.Pdf.PdfDocument pdfDoc =
+                new iText.Kernel.Pdf.PdfDocument(reader, writer);
+
+            if (pageNumber < 1 || pageNumber > pdfDoc.GetNumberOfPages())
+            {
+                MessageBox.Show("Invalid page number");
+                pdfDoc.Close();
+                return;
+            }
+
+            pdfDoc.RemovePage(pageNumber);
+
+            pdfDoc.Close();
+
+            _currentFilePath = output;
+            webView21.CoreWebView2.Navigate(_currentFilePath);
+
+            MessageBox.Show("Page deleted successfully.");
+        }
+
+        private void movePageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string pageInput = Microsoft.VisualBasic.Interaction.InputBox(
+            "Enter page number to move:", "Move Page", "");
+
+            string positionInput = Microsoft.VisualBasic.Interaction.InputBox(
+            "Enter new position:", "Move Page", "");
+
+            if (string.IsNullOrWhiteSpace(pageInput) || string.IsNullOrWhiteSpace(positionInput))
+                return;
+
+            int pageNumber = int.Parse(pageInput);
+            int newPosition = int.Parse(positionInput);
+
+            string tempFile = Path.Combine(Path.GetTempPath(), "output_temp.pdf");
+
+            PdfReader reader = new PdfReader(_currentFilePath);
+            PdfWriter writer = new PdfWriter(tempFile);
+
+            iText.Kernel.Pdf.PdfDocument pdfDoc = new iText.Kernel.Pdf.PdfDocument(reader, writer);
+
+            pdfDoc.MovePage(pageNumber, newPosition);
+
+            pdfDoc.Close();
+
+            _currentFilePath = tempFile;
+
+            webView21.CoreWebView2.Navigate(_currentFilePath);
+
+            MessageBox.Show("Page moved successfully.");
         }
     }
 }
